@@ -4,6 +4,7 @@ import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer"
+import { Link } from "react-router-dom";
 
 const filterData = (searchText, restaurants)=> {
   const fData = restaurants.filter((restaurant)=>{
@@ -32,10 +33,9 @@ const Body = ()=>{
     const json = await data.json();
 
     // console.log(json);
-    // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    //json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
   // console.log("rendered");
@@ -71,7 +71,12 @@ const Body = ()=>{
             // we can use map for looping
             filteredRestaurants.length===0 ? <h2>Search not found</h2> :
             filteredRestaurants.map((restaurant)=>{
-              return <RestaurantCard {...restaurant.info} key={restaurant.info.id}/>
+            // const toLink = "/restaurnats/"+restaurant.info.id;            
+              return (
+                <Link to={"/restaurants/"+restaurant.info.id} key={restaurant.info.id} >
+                  <RestaurantCard {...restaurant.info} />
+                </Link>
+              )
             })
           }
       </div>

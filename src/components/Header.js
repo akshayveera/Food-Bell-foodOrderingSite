@@ -1,6 +1,9 @@
 
 
 import { useState } from "react";
+import {Link} from "react-router-dom";
+// link is just a replcement for anchor tag(<a></a>) used in react for using links
+// it takes "to" as prop to mention target link, like "href" in anchor tag
 
 export const Title = ()=>{
     return (
@@ -25,9 +28,9 @@ const Header = ()=>{
             setCounter(++counter);
           }}>{"counter : "+counter}</button>               */}
           <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
               <li>Cart</li>
           </ul>
           { btnState ? <button className="login-btn" onClick={()=>{

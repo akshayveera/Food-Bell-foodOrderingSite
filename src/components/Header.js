@@ -4,6 +4,7 @@ import { useState } from "react";
 import {Link} from "react-router-dom";
 // link is just a replcement for anchor tag(<a></a>) used in react for using links
 // it takes "to" as prop to mention target link, like "href" in anchor tag
+import useCheckStatus from "../../utils/useCheckStatus"
 
 export const Title = ()=>{
     return (
@@ -31,8 +32,11 @@ const Header = ()=>{
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-              <li>Cart</li>
+              <li><Link to="/cart">Cart</Link></li>
+              <li><Link to="/instamart">Instamart</Link></li>
+              
           </ul>
+          <h3>Network Status : {useCheckStatus()?"✅":"❌"}</h3>
           { btnState ? <button className="login-btn" onClick={()=>{
             setBtnState(false)
           }}>LogOut</button> : <button className="login-btn" onClick={()=>{

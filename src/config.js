@@ -2,6 +2,14 @@
 
 export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+export const FETCH_RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.2668695&lng=75.70225669999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const FETCH_MENU_URL =  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&restaurantId=302514&catalog_qa=undefined&submitAction=ENTER";
+// above url is the actual URL, but as the ID id in middle I divided the url into two parts
+export const FETCH_MENU_URL_BEGIN = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&restaurantId=";
+export const FETCH_MENU_URL_END = "&catalog_qa=undefined&submitAction=ENTER";
+
+
 export const restaurantList = [
     {
       "info": {

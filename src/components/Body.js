@@ -1,47 +1,59 @@
 
+/**
+ * how to write path to import a file
+ * 
+ *  "./" - current folder
+ * "../" - parent folder
+ * "../../" - parent's parent folder
+ */
 
 import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
-
-const filterData = (searchText, restaurants)=> {
-  const fData = restaurants.filter((restaurant)=>{
-    return restaurant?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase());
-  });
-
-  return fData;
-}
+import {filterData} from "../../utils/helper"
+import useRestaurantList from "../../utils/useRestaurantsList"
+import useCheckStatus from "../../utils/useCheckStatus";
+import {FETCH_RESTAURANTS_URL} from "../config"
 
 const Body = ()=>{
 
-  // let searchTxt = "KFC";   // this is how we initialise a local variable
-
   // use state returns an array of size 2 ie, ouput = [state, function which sets state]
   const [searchText, setSearchText] = useState("");  // this is how we initialise a local state variable  
+
   const [allRestaurants, setAllRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants ] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants ] = useState([]);  
 
   useEffect(()=>{
-    // console.log("I am useeffect");
-    getRestaurants();
-  },[])
+      // console.log("I am useeffect");
+      getRestaurants();
+      },[])
 
-  async function getRestaurants() {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.2668695&lng=75.70225669999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-    const json = await data.json();
+      async function getRestaurants() {
+      const data = await fetch(FETCH_RESTAURANTS_URL);
+      const json = await data.json();
 
-    // console.log(json);
-    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      // console.log(json);
+      // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
   // console.log("rendered");
 
-  // not render component (early return)
-  if(!allRestaurants) return null;
+  const online = useCheckStatus();
+
+  if(!online){
+      return (
+          <>
+              <h1>
+                ⚠️ Oops! you are offline
+              </h1>
+              <p>🔴 please check your network connection</p>
+          </>
+      )
+  }
 
   // conditional rendering
   return allRestaurants?.length===0 ? <Shimmer/> :(

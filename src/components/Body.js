@@ -17,7 +17,7 @@ import useRestaurantList from "../../utils/useRestaurantsList"
 import useCheckStatus from "../../utils/useCheckStatus";
 import {FETCH_RESTAURANTS_URL} from "../config"
 
-const Body = ()=>{
+const Body = ({user})=>{
 
   // use state returns an array of size 2 ie, ouput = [state, function which sets state]
   const [searchText, setSearchText] = useState("");  // this is how we initialise a local state variable  
@@ -86,7 +86,7 @@ const Body = ()=>{
             // const toLink = "/restaurnats/"+restaurant.info.id;            
               return (
                 <Link to={"/restaurants/"+restaurant.info.id} key={restaurant.info.id} >
-                  <RestaurantCard {...restaurant.info} />
+                  <RestaurantCard {...restaurant.info} user= {user}/>
                 </Link>
               )
             })

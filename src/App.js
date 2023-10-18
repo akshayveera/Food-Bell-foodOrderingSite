@@ -1,6 +1,6 @@
 
 
-import React, { Suspense } from "react" 
+import React , {useState} from "react" 
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
@@ -44,13 +44,18 @@ const About = lazy(() => import("./components/About"))
 
 
 const AppLayout = ()=>{
-    return (
-        <>  
-          <Header/>
-          <Outlet/>
-          <Footer/>
-        </>
-    );
+
+  const user = useState({
+    name : "Namaste React"
+  })
+
+  return (
+      <>  
+        <Header/>
+        <Outlet/>
+        <Footer/>
+      </>
+  );
 };
 
 const appRoute = createBrowserRouter([
@@ -61,7 +66,9 @@ const appRoute = createBrowserRouter([
     children : [
       {
         path: '/',
-        element: <Body/>
+        element: <Body user={{
+          name : "Namaste React"
+        }}/>
       },
       {
         path: '/about',
@@ -111,6 +118,18 @@ const appRoute = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRoute}/>);
+
+/**
+ * 
+ * Applayout 
+ *    state : user
+ *       <Body user={user}/>
+ *          <RestaurantCard user={user}/>
+ *              <p>{user.name}</p>
+ * 
+ * this is prop drilling
+ * the way of passing data from parent to multiple nested child component through a chain of props is known as prop drilling
+ */
 
 
 

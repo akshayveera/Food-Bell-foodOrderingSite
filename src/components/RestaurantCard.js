@@ -2,7 +2,7 @@
 
 import { IMG_CDN_URL } from "../config"
 
-const RestaurantCard = ({name, avgRating, cuisines, areaName, cloudinaryImageId}) =>{
+const RestaurantCard = ({name, avgRating, cuisines, areaName, cloudinaryImageId,user}) =>{
     return (
       <div className="w-56 h-auto border-2 border-purple-400 m-4 p-3">
             <img src= {IMG_CDN_URL+cloudinaryImageId} alt="image" className="w-52"></img>
@@ -10,6 +10,7 @@ const RestaurantCard = ({name, avgRating, cuisines, areaName, cloudinaryImageId}
             <h4>{avgRating + "  stars"}</h4>
             <p>{cuisines.join(", ")}</p>
             <p>{areaName}</p>
+            <p>{user.name}</p>
         </div>
     )
 }

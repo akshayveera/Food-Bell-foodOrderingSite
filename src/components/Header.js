@@ -10,7 +10,7 @@ export const Title = ()=>{
     return (
       <>
         {/**inline styling need to be done in this */}
-        <h1 style={{color:"purple"}}>Food Villa</h1>
+        <h1 className="text-3xl font-bold">Food Villa</h1>
       </>
     )
 }
@@ -23,17 +23,17 @@ const Header = ()=>{
   // console.log("I am header")
 
     return (      
-      <div className="header">
+      <div className="flex bg-purple-100 justify-evenly items-center p-5">
           <Title/>  
           {/* <button onClick={()=>{
             setCounter(++counter);
           }}>{"counter : "+counter}</button>               */}
-          <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/cart">Cart</Link></li>
-              <li><Link to="/instamart">Instamart</Link></li>
+          <ul className="flex">
+              <li><Link to="/" className="px-2 ">Home</Link></li>
+              <li><Link to="/about" className="px-2">About</Link></li>
+              <li><Link to="/contact" className="px-2">Contact</Link></li>
+              <li><Link to="/cart" className="px-2">Cart</Link></li>
+              <li><Link to="/instamart" className="px-2">Instamart</Link></li>
               
           </ul>
           <h3>Network Status : {useCheckStatus()?"✅":"❌"}</h3>

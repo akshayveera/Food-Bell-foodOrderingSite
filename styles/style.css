@@ -1,5 +1,19 @@
 
+/*
+different types of styling
+1) inline css
+2) external css
+3) SCSS/SASS
+4) styled components
+5) component libraries/ UI libraries (ex : material UI, ANT UI, Base UI, Chakra UI etc)
+6) css frameworks (Tailwind, bootstrap etc)
+*/
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
 *{
     padding: 0px;
     margin: 0px;
@@ -58,6 +72,10 @@
 .login-btn {
     width: 100px;
 }
+
+*/
+
+
 
 
 

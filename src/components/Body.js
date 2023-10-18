@@ -59,17 +59,17 @@ const Body = ()=>{
   return allRestaurants?.length===0 ? <Shimmer/> :(
     <>
     {/* {console.log("render in")} */}
-      <div className="search-container">
+      <div className="flex justify-center p-2 bg-purple-300">
         <input 
           type="text" 
           placeholder="search something" 
-          className="search-input"
+          className="px-2 py-1 m-2 border-2 rounded-lg border-purple-200"
           value={searchText}
           onChange={(event)=>{
             setSearchText(event.target.value);
           }}          
         />
-        <button className="search-btn" onClick={()=>{
+        <button className="bg-purple-100 px-5 py-1 m-2 rounded-lg" onClick={()=>{
           // need to filter the data
           const data = filterData(searchText, allRestaurants);
           // then update the state - restaurants
@@ -78,7 +78,7 @@ const Body = ()=>{
         }}>Search </button>        
       </div>
       
-      <div className="cardBox">
+      <div className="flex flex-wrap">
           {
             // we can use map for looping
             filteredRestaurants.length===0 ? <h2>Search not found</h2> :

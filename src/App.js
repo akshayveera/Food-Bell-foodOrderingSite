@@ -13,7 +13,8 @@ import RestuarantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile"
 import Cart from "./components/Cart"
 import Shimmer from "./components/Shimmer"
-// import Instamart from "./components/Instamart"
+import UserContext from "../utils/UserContext"
+
 
 /**
  * 
@@ -45,16 +46,25 @@ const About = lazy(() => import("./components/About"))
 
 const AppLayout = ()=>{
 
-  const user = useState({
-    name : "Namaste React"
+  const [user, setUser] = useState({
+      name : "Akshay",
+      email : "akshay@gmail.com"
   })
 
   return (
-      <>  
+    <>
+      
+      <UserContext.Provider value={
+        {user : user,
+        setUser : setUser,
+        }
+      
+      }>  
         <Header/>
         <Outlet/>
         <Footer/>
-      </>
+      </UserContext.Provider>
+    </>
   );
 };
 
@@ -66,9 +76,7 @@ const appRoute = createBrowserRouter([
     children : [
       {
         path: '/',
-        element: <Body user={{
-          name : "Namaste React"
-        }}/>
+        element: <Body/>
       },
       {
         path: '/about',

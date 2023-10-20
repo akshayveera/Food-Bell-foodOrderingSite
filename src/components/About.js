@@ -4,19 +4,7 @@ import { Outlet } from "react-router-dom";
 import ProfileFBC from "./Profile";
 import ProfileCBC from "./ProfileClass"
 import { Component } from "react";
-
-// const About2 = ()=>{
-//     return (
-//         <div>
-//             <h1>About Us</h1>
-//             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum consectetur culpa odit.</p>
-//             <div>
-//                 <ProfileFBC temp="propOfFuntionalComp"/>
-//                 <ProfileCBC temp="propOfClassComp"/>
-//             </div>
-//         </div>
-//     )
-// }
+import UserContext from "../../utils/UserContext";
 
 class About extends Component {
 
@@ -30,31 +18,27 @@ class About extends Component {
         
     }
 
-    // componentDidUpdate(){
-    //     console.log("parent - componentDidUpdate");
-    // }
+    
 
-    // componentWillUnmount(){
-    //     console.log("parent - componentWillUnmount");
-    // }
+
 
     render() {
         return (
             <div>
-                {
-                    console.log("parent - render")
-                }
+                <UserContext.Consumer>
+                    {
+                        (data)=>{
+                            return (
+                                <h1 className="text-2xl font-bold">Hello, {data.user.name}</h1>
+                            )
+                        }
+                    }
+                </UserContext.Consumer>
                 <h1>About us</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum consectetur culpa odit.</p>
                 <div>
-                    {/* <button onClick={()=>{
-                        this.setState({
-                            count : this.state.count+1
-                        })
-                    }}>Click : {this.state.count}</button> */}
                     <ProfileFBC temp="propOfFuntionalComp"/>
-                    {/* <ProfileCBC temp="propOfClassComp" name="first child" /> */}
-                    {/* <ProfileCBC temp="propOfClassComp" name="second child" /> */}
+
                 </div>
             </div>
         )

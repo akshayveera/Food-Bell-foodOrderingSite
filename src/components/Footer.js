@@ -1,12 +1,17 @@
 
+import {useContext} from "react";
+import UserContext from "../../utils/UserContext";
 
 const Footer = ()=>{
+    
+    const {user} = useContext(UserContext);
+
     return (
         
-        <h1>
-            Footer
-            {/* {console.log("I am footer")} */}
-        </h1>
+        <div className="flex justify-center items-center p-5 bg-purple-200 ">
+            Developed by {user.name} with ❤️
+        </div>
+        
     )
 }
 

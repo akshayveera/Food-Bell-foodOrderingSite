@@ -14,35 +14,15 @@ import Profile from "./components/Profile"
 import Cart from "./components/Cart"
 import Shimmer from "./components/Shimmer"
 import UserContext from "../utils/UserContext"
+import {Provider} from "react-redux";
+import store from "../utils/store"
 
-
-/**
- * 
- * chunking
- * code splitting
- * dynamic bundling
- * lazy loading
- * on demand loading
- * dynamic import
- * 
- * these are all refer to same thing that is chunking our code or splitting our code
- * that means in large scale application the code is very big so we break them in chunks or we split them into different part
- * so that we can only load the code in the browser which is required * 
- */
 
 import {lazy, Suspense} from "react"
 
 // dynamic loading
 const Instamart = lazy(() => import("./components/Instamart"));
-const About = lazy(() => import("./components/About"))
-// upon On demand loading  -->  upon render  -->  suspend loading
-
-/**
- * here we splitted the code    of Instamart and About
- * that means the code of Instamart and About is loaded into browser only when user try to access it 
- */
-
-
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = ()=>{
 
@@ -53,17 +33,18 @@ const AppLayout = ()=>{
 
   return (
     <>
-      
-      <UserContext.Provider value={
-        {user : user,
-        setUser : setUser,
-        }
-      
-      }>  
-        <Header/>
-        <Outlet/>
-        <Footer/>
-      </UserContext.Provider>
+      <Provider store={store}>
+        <UserContext.Provider value={
+          {
+            user : user,
+            setUser : setUser,
+          }      
+        }>  
+          <Header/>
+          <Outlet/>
+          <Footer/>
+        </UserContext.Provider>
+      </Provider>
     </>
   );
 };
@@ -127,17 +108,6 @@ const appRoute = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRoute}/>);
 
-/**
- * 
- * Applayout 
- *    state : user
- *       <Body user={user}/>
- *          <RestaurantCard user={user}/>
- *              <p>{user.name}</p>
- * 
- * this is prop drilling
- * the way of passing data from parent to multiple nested child component through a chain of props is known as prop drilling
- */
 
 
 

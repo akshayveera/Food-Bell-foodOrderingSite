@@ -8,7 +8,7 @@ const Footer = ()=>{
 
     return (
         
-        <div className="flex justify-center items-center p-5 bg-purple-200 ">
+        <div className="flex justify-center items-center p-5 bg-purple-200 w-full">
             Developed by {user.name} with ❤️
         </div>
         

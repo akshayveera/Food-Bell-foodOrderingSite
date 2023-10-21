@@ -10,9 +10,9 @@ const RestaurantCard = ({name, avgRating, cuisines, areaName, cloudinaryImageId}
     const {user} = useContext(UserContext);
 
     return (
-      <div className="w-56 h-auto border-2 border-purple-400 m-4 p-3">
-            <img src= {IMG_CDN_URL+cloudinaryImageId} alt="image" className="w-52"></img>
-            <h2>{name}</h2>
+      <div className="w-56 h-auto bg-purple-100 rounded-lg m-4 p-3 shadow-xl ">
+            <img src= {IMG_CDN_URL+cloudinaryImageId} alt="image" className="w-full h-52 object-center  rounded-lg"></img>
+            <h2 className="font-bold text-xl">{name}</h2>
             <h4>{avgRating + "  stars"}</h4>
             <p>{cuisines.join(", ")}</p>
             <p>{areaName}</p>

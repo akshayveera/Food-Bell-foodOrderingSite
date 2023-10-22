@@ -4,9 +4,9 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import { IMG_CDN_URL } from "../config"
 import Shimmer from "./Shimmer"
-import useRestaurantsMenu from "../../utils/useRestaurantMenu";
+import useRestaurantsMenu from "../utils/useRestaurantMenu";
 import {useDispatch} from "react-redux";
-import {addItem} from "../../utils/cartSlice"
+import {addItem} from "../utils/cartSlice"
 
 
 const RestaurantMenu = ()=>{
@@ -42,22 +42,25 @@ const RestaurantMenu = ()=>{
                 {/* <button className="px-8 py-2 my-5 bg-purple-300 rounded-lg" onClick={()=>handleClick()}>add</button> */}
             </div>
             <div className="w-1/3">
-                <ul className="w-full">
+                <div className="w-full">
                     <h2 className="font-bold text-2xl m-2">Menu</h2>
-                    {menu.map((item)=>{
-                        return (
-                            <li key={item.card.info.id} 
-                                className="px-2 py-4 my-2 bg-purple-100 rounded-xl flex justify-between w-full">
-                                {item.card.info.name}
-                                <button 
-                                    className="px-4 py-1 bg-purple-300 rounded-lg"
-                                    onClick={()=>addFoodItem(item?.card?.info)}>
-                                        add
-                                </button>
-                            </li>                            
-                        )
-                    })}
-                </ul>
+                    <ul data-testid="menu">
+                        {menu.map((item)=>{
+                            return (
+                                <li key={item.card.info.id} 
+                                    className="px-2 py-4 my-2 bg-purple-100 rounded-xl flex justify-between w-full">
+                                    {item.card.info.name}
+                                    <button 
+                                        data-testid="add-btn"
+                                        className="px-4 py-1 bg-purple-300 rounded-lg"
+                                        onClick={()=>addFoodItem(item?.card?.info)}>
+                                            add
+                                    </button>
+                                </li>                            
+                            )
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     )

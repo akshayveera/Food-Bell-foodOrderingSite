@@ -13,9 +13,9 @@ import RestuarantMenu from "./components/RestaurantMenu"
 import Profile from "./components/Profile"
 import Cart from "./components/Cart"
 import Shimmer from "./components/Shimmer"
-import UserContext from "../utils/UserContext"
+import UserContext from "../src/utils/UserContext"
 import {Provider} from "react-redux";
-import store from "../utils/store"
+import store from "../src/utils/store"
 
 
 import {lazy, Suspense} from "react"

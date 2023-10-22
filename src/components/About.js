@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import ProfileFBC from "./Profile";
 import ProfileCBC from "./ProfileClass"
 import { Component } from "react";
-import UserContext from "../../utils/UserContext";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
 

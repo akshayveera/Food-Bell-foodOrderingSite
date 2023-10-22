@@ -1,0 +1,10 @@
+
+// we can also use this file for removing console.logs
+
+{
+    "presets": [
+        ["@babel/preset-env", {"targets": {"node": "current"}}],
+        ["@babel/preset-react", {"runtime": "automatic"}]
+
+    ]
+}

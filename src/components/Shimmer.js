@@ -2,7 +2,7 @@
 
 const Shimmer = ()=>{
     return (
-        <>
+        <div data-testid="shimmer">
             <div className="shimmer-search"></div>
             <div className="shimmer-search-btn"></div>
             <div className="shimmer">
@@ -113,7 +113,7 @@ const Shimmer = ()=>{
                 </div>
                 
             </div>
-        </>
+        </div>
     )
 }
 

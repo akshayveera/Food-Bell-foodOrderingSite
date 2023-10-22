@@ -12,10 +12,10 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
-import { filterData } from "../../utils/helper"
-import useCheckStatus from "../../utils/useCheckStatus";
+import { filterData } from "../utils/helper"
+import useCheckStatus from "../utils/useCheckStatus";
 import { FETCH_RESTAURANTS_URL } from "../config"
-import UserContext from "../../utils/UserContext";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -56,6 +56,7 @@ const Body = () => {
     <div className="">
       <div className="flex justify-center p-2 bg-purple-300">
         <input
+          data-testid="search-input"
           type="text"
           placeholder="search something"
           className="px-2 py-1 m-2 border-2 rounded-lg border-purple-200"
@@ -64,7 +65,7 @@ const Body = () => {
             setSearchText(event.target.value);
           }}
         />
-        <button className="bg-purple-100 px-5 py-1 m-2 rounded-lg" onClick={() => {
+        <button data-testid="search-btn" className="bg-purple-100 px-5 py-1 m-2 rounded-lg" onClick={() => {
           const data = filterData(searchText, allRestaurants);
           setFilteredRestaurants(data);
 
@@ -87,7 +88,7 @@ const Body = () => {
         }></input>
       </div>
 
-      <div className="flex flex-wrap py-5 justify-evenly">
+      <div className="flex flex-wrap py-5 justify-evenly" data-testid="res-list">
         {
           filteredRestaurants.length === 0 ? <h2>Search not found</h2> :
             filteredRestaurants.map((restaurant) => {          

@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from "react"; 
-import { FETCH_MENU_URL_BEGIN, FETCH_MENU_URL_END } from "../src/config";
+import { FETCH_MENU_URL_BEGIN, FETCH_MENU_URL_END } from "../config";
 
 const useRestaurantsMenu = (resId) =>{
 

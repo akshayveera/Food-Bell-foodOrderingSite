@@ -8,8 +8,8 @@ const Footer = ()=>{
 
     return (
         
-        <div className="flex justify-center items-center p-5 bg-purple-200 w-full">
-            Developed by {user.name} with ❤️
+        <div className="flex justify-center items-center h-20 border-t w-full font-font2 text-2xl text-[#4c4f5a] ">
+            Developed by <span className="font-font2 px-2 text-[#CB2C2C]" >Akshay</span> with ❤️
         </div>
         
     )

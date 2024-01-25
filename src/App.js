@@ -3,7 +3,7 @@
 import React , {useState} from "react" 
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
-import Body from "./components/Body"
+import Restaurants from "./components/Restaurants"
 import Footer from "./components/Footer"
 // import About from "./components/About"
 import Error from "./components/Error"
@@ -16,6 +16,7 @@ import Shimmer from "./components/Shimmer"
 import UserContext from "../src/utils/UserContext"
 import {Provider} from "react-redux";
 import store from "../src/utils/store"
+import Home from "./components/Home"
 
 
 import {lazy, Suspense} from "react"
@@ -57,7 +58,11 @@ const appRoute = createBrowserRouter([
     children : [
       {
         path: '/',
-        element: <Body/>
+        element: <Home/>
+      },
+      {
+        path: '/restaurants',
+        element : <Restaurants/>
       },
       {
         path: '/about',

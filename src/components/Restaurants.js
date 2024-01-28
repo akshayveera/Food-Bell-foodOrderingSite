@@ -66,9 +66,7 @@ const Restaurants = () => {
 
   // this is for handling rejections if API is not working
   if(!apiOk){
-    return (
-      <SomethingWentWrong/>
-    )
+    return <SomethingWentWrong/>
   }
 
   return allRestaurants?.length === 0 ? <Shimmer /> : (

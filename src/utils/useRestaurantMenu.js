@@ -6,22 +6,34 @@ const useRestaurantsMenu = (resId) =>{
 
     const [restaurant, setRestaurant] = useState(null);
     const [menu, setMenu] = useState(null);
+    const [apiOk, setApiOk] = useState(true);
 
     useEffect(()=>{
         getRestaurantMenu();
     },[])
 
     async function getRestaurantMenu(){
-        const link = FETCH_MENU_URL_BEGIN+resId+FETCH_MENU_URL_END;
-        const data = await fetch(link);
-        const json = await data.json();
 
-        setRestaurant(json?.data?.cards[0]?.card?.card?.info);
-        setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
+        try{
+            const link = FETCH_MENU_URL_BEGIN+resId+FETCH_MENU_URL_END;
+            const data = await fetch(link);
+            const json = await data.json();
+    
+            // console.log(json);
+            console.log("restaurant")
+            console.log(json?.data?.cards[0]?.card?.card?.info);
+            console.log("menu")
+            console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+    
+            setRestaurant(json?.data?.cards[0]?.card?.card?.info);
+            setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
+        }catch{
+            setApiOk(false);
+        }
 
     }
     
-    return [restaurant, menu];
+    return [restaurant, menu, apiOk];
 
 }
 

@@ -16,6 +16,7 @@ import { filterData } from "../utils/helper"
 import useCheckStatus from "../utils/useCheckStatus";
 import { FETCH_RESTAURANTS_URL } from "../config"
 import UserContext from "../utils/UserContext";
+import SomethingWentWrong from "./SomethingWentWrong";
 
 const Restaurants = () => {
 
@@ -66,7 +67,7 @@ const Restaurants = () => {
   // this is for handling rejections if API is not working
   if(!apiOk){
     return (
-      <h1>Something went wrong</h1>
+      <SomethingWentWrong/>
     )
   }
 
@@ -89,7 +90,7 @@ const Restaurants = () => {
           }}
         />
 
-        <button data-testid="search-btn" className="bg-[#CB2C2C] px-6 py-3 m-2 rounded-lg font-font5 text-white text-xl" onClick={() => {
+        <button data-testid="search-btn" className="bg-[#CB2C2C] px-6 py-3 m-2 rounded-lg font-font5 text-white text-xl hover:shadow hover:shadow-red-400" onClick={() => {
           const data = filterData(searchText, allRestaurants);
           setFilteredRestaurants(data);
 

@@ -113,12 +113,9 @@ const Restaurants = () => {
           }
         }></input> */}
         
-      </div>
+      </div>      
 
-      {console.log(filteredRestaurants)}
-      
-
-      <div className="flex flex-wrap py-5 mx-36" data-testid="res-list">
+      <div className="flex flex-wrap py-5 w-[85%] mx-auto justify-evenly " data-testid="res-list">
         {
           filteredRestaurants?.length === 0 ? <h2>Search not found</h2> :
             filteredRestaurants?.map((restaurant) => {          
@@ -130,6 +127,7 @@ const Restaurants = () => {
             })
         }
       </div>
+
     </div>
   )
 

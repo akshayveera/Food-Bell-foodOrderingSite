@@ -2,7 +2,6 @@
   "name": "03-food-villa",
   "version": "1.0.0",
   "description": "Food Villa App",
-  "main": "App.js",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",

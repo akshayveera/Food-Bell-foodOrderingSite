@@ -28,7 +28,7 @@ const Header = ()=>{
   //#CB2C2C
 
   return (      
-    <div className="flex border-b justify-between items-center p-5 " >
+    <div className="flex border-b justify-between items-center px-5 py-7 " >
 
         <div className="w-[30%] items-center mx-auto">
           <Link to="/" className="flex justify-center">

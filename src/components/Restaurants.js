@@ -17,6 +17,7 @@ import useCheckStatus from "../utils/useCheckStatus";
 import { FETCH_RESTAURANTS_URL } from "../config"
 import UserContext from "../utils/UserContext";
 import SomethingWentWrong from "./SomethingWentWrong";
+import sad from "../../assets/sad.png"
 
 const Restaurants = () => {
 
@@ -117,7 +118,12 @@ const Restaurants = () => {
 
       <div className="flex flex-wrap py-5 w-[85%] mx-auto justify-evenly " data-testid="res-list">
         {
-          filteredRestaurants?.length === 0 ? <h2>Search not found</h2> :
+          filteredRestaurants?.length === 0 ? (
+            <div className="my-10">
+              <img src={sad} alt="" className="mb-4" />
+              <p className="text-center text-4xl font-font1 text-[#CB2C2C] my-4 ">No matching results</p>
+            </div>
+          ) :
             filteredRestaurants?.map((restaurant) => {          
               return (
                 <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id} >

@@ -67,7 +67,7 @@ const appRoute = createBrowserRouter([
       {
         path: '/about',
         element: <Suspense fallback={
-          <h1>Loading ...</h1>
+          <h1>Lazy Loading ...</h1>
         }>
           <About/>
         </Suspense>,

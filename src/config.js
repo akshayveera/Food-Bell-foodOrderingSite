@@ -2,7 +2,8 @@
 
 export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-export const FETCH_RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const FETCH_RESTAURANTS_URL = "https://instafood.onrender.com/api/restaurants?lat=17.448294&lng=78.391487";
+// export const FETCH_RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 // madhapur(HYD) - https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 // lpu - https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.2231589&lng=75.7670466&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 

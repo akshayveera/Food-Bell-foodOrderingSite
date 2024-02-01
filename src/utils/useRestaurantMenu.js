@@ -19,12 +19,6 @@ const useRestaurantsMenu = (resId) =>{
             const data = await fetch(link);
             const json = await data.json();
     
-            // console.log(json);
-            console.log("restaurant")
-            console.log(json?.data?.cards[0]?.card?.card?.info);
-            console.log("menu")
-            console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
-    
             setRestaurant(json?.data?.cards[0]?.card?.card?.info);
             setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
         }catch{

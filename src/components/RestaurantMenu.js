@@ -3,7 +3,7 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import { IMG_CDN_URL } from "../config"
-import Shimmer from "./Shimmer"
+import MenuShimmer from "./MenuShimmer";
 import useRestaurantsMenu from "../utils/useRestaurantMenu";
 import {useDispatch} from "react-redux";
 import {addItem} from "../utils/cartSlice"
@@ -17,15 +17,14 @@ const RestaurantMenu = ()=>{
     const {resId} = useParams();
     const [restaurant, menu, apiOk] = useRestaurantsMenu(resId);
 
-    console.log(restaurant)
    
     if(!apiOk)
     {
         return <SomethingWentWrong/>
     }
 
-    if(!restaurant){
-        return <Shimmer/>
+    if(!restaurant ){
+        return <MenuShimmer/>
     }
 
     const dispatch = useDispatch();
@@ -35,14 +34,13 @@ const RestaurantMenu = ()=>{
     // }
 
     const addFoodItem = (item)=>{
-        // console.log(item);
         dispatch(addItem(item));
     }
 
     
     const {name, id, city, cuisines, locality, areaName, avgRating, cloudinaryImageId, totalRatingsString} = restaurant;
 
-    return (!restaurant) ? <Shimmer/> :(
+    return (!restaurant) ? <MenuShimmer/> :(
 
 
         <div className=" ">

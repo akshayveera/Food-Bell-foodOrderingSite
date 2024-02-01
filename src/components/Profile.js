@@ -8,7 +8,7 @@ const Profile = (props)=>{
 
     useEffect(()=>{
         const timer = setInterval(()=>{
-            console.log("NAMASTE REACT");
+            // console.log("NAMASTE REACT");
         }, 1000);
 
         return()=>{

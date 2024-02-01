@@ -37,9 +37,7 @@ const Restaurants = () => {
     try{
       const data = await fetch(FETCH_RESTAURANTS_URL);
       const json = await data.json();
-      
-      // console.log(json);
-      // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
       setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       
@@ -80,7 +78,6 @@ const Restaurants = () => {
           className="px-5 py-2 m-2 border-[2px] rounded-lg border-[#CB2C2C] w-[40%] outline-none"
           value={searchText}
           onChange={(event) => {
-            console.log(event.target.value);
             setSearchText(event.target.value);
             if(event.target.value === '')
             {

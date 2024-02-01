@@ -32,8 +32,6 @@ const Cart = ()=>{
                 onClick={()=>handleClick()}>clear cart</button>
             </div> */}
 
-            {/* {console.log(items)} */}
-
             <div className="w-[50%]">
                 <CartItems items={items}/>
             </div>

@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from "react"; 
-import { FETCH_MENU_URL_BEGIN, FETCH_MENU_URL_END } from "../config";
+import { FETCH_MENU_URL } from "../config";
 
 const useRestaurantsMenu = (resId) =>{
 
@@ -15,7 +15,7 @@ const useRestaurantsMenu = (resId) =>{
     async function getRestaurantMenu(){
 
         try{
-            const link = FETCH_MENU_URL_BEGIN+resId+FETCH_MENU_URL_END;
+            const link = FETCH_MENU_URL+resId;
             const data = await fetch(link);
             const json = await data.json();
     

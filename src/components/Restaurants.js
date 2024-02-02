@@ -64,7 +64,7 @@ const Restaurants = () => {
   }
 
   // this is for handling rejections if API is not working
-  if(!apiOk || 1){
+  if(!apiOk){
     return <SomethingWentWrong/>
   }
 

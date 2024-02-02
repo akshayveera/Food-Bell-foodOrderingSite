@@ -17,23 +17,23 @@ const ContactUs = ()=>{
                     <form action="#" className="flex flex-col">
 
                         <div className="mt-5 relative w-[75%] mx-auto">
-                            <label htmlFor="name" className="absolute text-sm bg-transparent top-2 -left-4 text-white py-1 px-2 rounded !bg-[#CB2C2C] ">Name </label>
-                            <input type="text" id="name" defaultValue="Akshay" className="p-2 border-2 border-[#CB2C2C] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#373267]" />
+                            <label htmlFor="name" className="absolute text-sm bg-transparent top-2 -left-4 text-white py-1 px-2 rounded !bg-[#373267] ">Name </label>
+                            <input type="text" id="name" defaultValue="Akshay" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#5f5f63]" />
                         </div>
 
                         <div className="mt-5 relative w-[75%] mx-auto">
-                            <label htmlFor="email" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#CB2C2C] text-white py-1 px-2 rounded">Email </label>
-                            <input type="email" id="email" defaultValue="akshay@gmail.com" className="p-2 border-2 border-[#CB2C2C] rounded-lg w-full outline-none bg-gray-100 pl-9 font-semibold text-[#373267]" />
+                            <label htmlFor="email" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Email </label>
+                            <input type="email" id="email" defaultValue="akshay@gmail.com" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-9 font-semibold text-[#5f5f63]" />
                         </div>
 
                         <div className="mt-5 relative w-[75%] mx-auto">
-                            <label htmlFor="phone" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#CB2C2C] text-white py-1 px-2 rounded">Phone </label>
-                            <input type="tel" id="phone" maxLength="10" defaultValue="9999999999" className="p-2 border-2 border-[#CB2C2C] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#373267]" />
+                            <label htmlFor="phone" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Phone </label>
+                            <input type="tel" id="phone" maxLength="10" defaultValue="9999999999" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#5f5f63]" />
                         </div>
 
                         <div className="mt-5 relative w-[75%] mx-auto">
-                            <label htmlFor="msg" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#CB2C2C] text-white py-1 px-2 rounded">Message </label>
-                            <textarea name="msg" id=""  rows="6" defaultValue="I ordered biryani but received puloa" className="p-2 border-2 border-[#CB2C2C] rounded-lg w-full outline-none bg-gray-100 pl-10 pt-10 font-semibold text-[#373267]"></textarea>
+                            <label htmlFor="msg" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Message </label>
+                            <textarea name="msg" id=""  rows="6" defaultValue="I ordered biryani but received puloa" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 pt-10 font-semibold text-[#5f5f63]"></textarea>
                         </div>
 
                         <input type="submit" value="submit" className="bg-[#CB2C2C] w-[75%] mx-auto py-2 text-white font-font5 text-xl rounded-lg mt-4 hover:shadow hover:shadow-red-400 cursor-pointer"/>

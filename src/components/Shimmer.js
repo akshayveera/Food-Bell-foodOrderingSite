@@ -98,6 +98,12 @@ const Shimmer = ()=>{
                     <div className="shimmer-line2"></div>                
                     <div className="shimmer-line2"></div>                                
                 </div>
+                <div className="shimmer-box">
+                    <div className="shimmer-img"></div>
+                    <div className="shimmer-line1"></div>
+                    <div className="shimmer-line2"></div>                
+                    <div className="shimmer-line2"></div>                                
+                </div>
                 
             </div>
         </div>

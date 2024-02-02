@@ -140,15 +140,13 @@ const RestaurantMenu = ()=>{
 
                 ) : (
 
-                    <div className="flex items-center justify-evenly w-[60%] mx-auto my-4  ">
+                    <div className="flex items-center justify-evenly w-[60%] mx-auto my-4 h-[35vh]  ">
 
-                        <img src={soldOut} alt="" className=" "/>
-
-                        <div className="w-[40%] flex flex-col items-center gap-5">
-                            <p className="font-font2 text-3xl text-center text-[#373267]">Currently this restaurant is not serving! retry later</p>
+                        <div className="w-[50%] flex flex-col items-center gap-5">
+                            <p className="font-font2 text-2xl text-center text-[#373267]">Currently this restaurant is not serving! retry later</p>
 
                             <Link to="/restaurants">
-                                <button className="font-font5 text-2xl bg-[#CB2C2C] px-10 py-2 rounded-lg  text-white ">explore other restaurants</button>
+                                <button className="font-font5 text-xl bg-[#CB2C2C] px-10 py-2 rounded-lg  text-white ">explore other restaurants</button>
                             </Link>
 
 

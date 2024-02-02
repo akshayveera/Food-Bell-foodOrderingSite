@@ -64,7 +64,7 @@ const Restaurants = () => {
   }
 
   // this is for handling rejections if API is not working
-  if(!apiOk){
+  if(!apiOk || 1){
     return <SomethingWentWrong/>
   }
 
@@ -116,9 +116,11 @@ const Restaurants = () => {
       <div className="flex flex-wrap py-5 w-[85%] mx-auto justify-evenly " data-testid="res-list">
         {
           filteredRestaurants?.length === 0 ? (
-            <div className="my-10">
-              <img src={sad} alt="" className="mb-4" />
-              <p className="text-center text-4xl font-font1 text-[#CB2C2C] my-4 ">No matching results</p>
+            <div className="h-[58vh] flex flex-col justify-center items-center">
+              <p className="text-center text-4xl font-font1 text-[#CB2C2C] mb-5 ">No matching results</p>
+              <button className="bg-[#CB2C2C] text-white font-font5 text-xl py-2 px-5 rounded-lg mb-10" onClick={()=>{
+                setFilteredRestaurants(allRestaurants)
+              }}>view all restaurants</button>
             </div>
           ) :
             filteredRestaurants?.map((restaurant) => {          

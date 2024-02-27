@@ -18,9 +18,13 @@ const useRestaurantsMenu = (resId) =>{
             const link = FETCH_MENU_URL+resId;
             const data = await fetch(link);
             const json = await data.json();
-    
-            setRestaurant(json?.data?.cards[0]?.card?.card?.info);
-            setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
+
+            console.log("restaurnat",json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+            
+            // 0
+            setRestaurant(json?.data?.cards[2]?.card?.card?.info);
+            // 2
+            setMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
         }catch{
             setApiOk(false);
         }

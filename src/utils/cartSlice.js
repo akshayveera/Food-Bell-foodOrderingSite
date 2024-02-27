@@ -11,16 +11,10 @@ const cartSlice = createSlice({
             state.items.push(action.payload);
         },
         removeItem : (state, action) => {
-            let flag = false;
 
             for(let i=0; i<state.items.length; i++){
 
-                if(i === action.payload)
-                {
-                    flag = true;
-                }
-
-                if(flag)
+                if(i >= action.payload)
                 {
                     state.items[i] = state.items[i+1];
                 }

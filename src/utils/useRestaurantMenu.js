@@ -23,9 +23,9 @@ const useRestaurantsMenu = (resId) =>{
             // console.log("restaurnat",json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
             
             // 0,2
-            setRestaurant(json?.data?.cards[0]?.card?.card?.info);
+            setRestaurant(json?.data?.cards[2]?.card?.card?.info);
             // 2,4
-            setMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
+            setMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards); 
         }catch{
             setApiOk(false);
         }

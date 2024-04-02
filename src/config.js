@@ -11,7 +11,7 @@ export const FETCH_MENU_URL =  "https://instafood.onrender.com/api/menu?lat=17.4
 // export const FETCH_MENU_URL =  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.448294&lng=78.391487&catalog_qa=undefined&submitAction=ENTER&restaurantId=33040";
 // above url is the actual URL, but as the ID id in middle I divided the url into two parts
 
-
+// this is just for refernce app is using the original API, not this data
 export const restaurantList = [
     {
       "info": {

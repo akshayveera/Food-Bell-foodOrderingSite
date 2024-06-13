@@ -7,7 +7,7 @@
  * "../../" - parent's parent folder
  */
 
-import { restaurantList } from "../config";
+// import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer"
@@ -38,16 +38,21 @@ const Restaurants = () => {
       const data = await fetch(FETCH_RESTAURANTS_URL);
       const json = await data.json();
 
-      setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      //restaurants path : json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+
+      const match = json?.data?.cards?.find(item => item?.card?.card?.id === "top_brands_for_you");
+      const rests = match?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+      setAllRestaurants(rests);
+      setFilteredRestaurants(rests);
       
       setApiOk(true);
     }
     catch(err)
     {
+      // console.log(err);
       setApiOk(false);
     }
-
   }
 
   const online = useCheckStatus();

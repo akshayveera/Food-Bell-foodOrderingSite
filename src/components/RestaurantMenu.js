@@ -6,16 +6,24 @@ import { IMG_CDN_URL } from "../config"
 import MenuShimmer from "./MenuShimmer";
 import useRestaurantsMenu from "../utils/useRestaurantMenu";
 import {useDispatch} from "react-redux";
-import {addItem} from "../utils/cartSlice"
+// import {addItem} from "../utils/cartSlice"
 import star from "../../assets/star.png"
 import SomethingWentWrong from "./SomethingWentWrong";
-import soldOut from "../../assets/soldOut.png"
+// import soldOut from "../../assets/soldOut.png"
 import { Link } from "react-router-dom";
+import RestaurantMenuCard from "./RestaurantMenuCard";
+import RestaurantMenuCategory from "./RestaurantMenuCategory";
 
 
 const RestaurantMenu = ()=>{
     const {resId} = useParams();
     const [restaurant, menu, apiOk] = useRestaurantsMenu(resId);
+
+    // console.log("restaurant", restaurant);
+    // console.log("menu", menu);
+    // console.log("api", apiOk);
+
+    console.log("menu", menu)
 
    
     if(!apiOk)
@@ -33,9 +41,9 @@ const RestaurantMenu = ()=>{
     //     dispatch(addItem("banana"));
     // }
 
-    const addFoodItem = (item)=>{
-        dispatch(addItem(item));
-    }
+    // const addFoodItem = (item)=>{
+    //     dispatch(addItem(item));
+    // }
 
     
     const {name, id, city, cuisines, locality, areaName, avgRating, cloudinaryImageId, totalRatingsString} = restaurant;
@@ -81,62 +89,18 @@ const RestaurantMenu = ()=>{
             {
                 menu ? (
 
-                    <div className="flex items-center justify-center">
-                 <div className="w-7/12">
-                    <div className="w-full">
-                        <h2 className=" text-2xl font-font5 p-4 border-b text-center">Menu</h2>
-                        <ul data-testid="menu">
-                            {menu.map((item)=>{
+                    menu.map((item)=>{
 
-                                return (                                    
-                                    <li key={item.card.info.id} 
-                                        className="px-2 py-4 my-2 flex justify-between w-full border-b">
-                                        
-                                        <div className="flex flex-col gap-2 w-[70%] justify-between">
-                                            <div>
-                                                <p className="font-semibold text-xl">{item.card.info.name}</p>
+                        if(item?.card?.card?.itemCards)
+                        {
+                            return <RestaurantMenuCard key={item?.card?.card?.title} menuData={item?.card?.card}/>                            
+                        }
 
-                                                {
-                                                    (item.card.info.price) ? (
-                                                        <p className="font-semibold text-gray-700 text-lg">{"₹ " +  (parseInt(item.card.info.price)/100)}</p>
-                                                        ) : (
-                                                            (item.card.info.defaultPrice) ? (
-                                                                <p className="font-semibold text-gray-700 text-lg">{"₹ " +  (parseInt(item.card.info.defaultPrice)/100)}</p>
-                                                            ) : "" 
-                                                        )
-                                                }                                                
-
-                                            </div>
-
-                                            <div className="flex gap-1 items-center">
-                                                <img src={star} alt="" className="h-5"/>
-                                                <p className="font-bold text-lg text-[#CB2C2C]">{item.card.info.ratings.aggregatedRating.rating}</p>
-                                            </div>
-
-
-                                            <p className="text-xs text-gray-400">{item.card.info.description}</p>
-
-
-                                        </div>
-                                        
-                                        <div className="flex flex-col items-center">
-                                            <img src={IMG_CDN_URL+item.card.info.imageId} alt="" className="h-28 w-36 object-cover rounded-lg "/>
-                                            <button 
-                                                data-testid="add-btn"
-                                                className="px-4 py-1 bg-[#CB2C2C] font-font5 text-lg text-white rounded-lg relative bottom-4  hover:shadow hover:shadow-red-400"
-                                                onClick={()=>addFoodItem(item?.card?.info)}>
-                                                    add
-                                            </button>
-
-                                        </div>
-
-                                    </li>                            
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </div>         
-            </div>
+                        if(item?.card?.card?.categories)
+                        {
+                            return <RestaurantMenuCategory key={item?.card?.card?.title} catData={item?.card?.card}/>
+                        }
+                    })
 
                 ) : (
 
@@ -148,8 +112,6 @@ const RestaurantMenu = ()=>{
                             <Link to="/restaurants">
                                 <button className="font-font5 text-xl bg-[#CB2C2C] px-10 py-2 rounded-lg  text-white ">explore other restaurants</button>
                             </Link>
-
-
                         </div>
                         
                     </div>

@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import star from "../../assets/star.png"
 import { IMG_CDN_URL } from "../config"
+import {useDispatch} from "react-redux";
+import {addItem} from "../utils/cartSlice"
 
 const RestaurantMenuCard = ({menuData}) => {
 
@@ -10,6 +12,12 @@ const RestaurantMenuCard = ({menuData}) => {
     const isOpenVal = (menuData?.title === "Recommended") ? true : false;
 
     const [isOpen, setIsOpen] = useState(isOpenVal);
+
+    const dispatch = useDispatch();
+
+    const addFoodItem = (item)=>{
+        dispatch(addItem(item));
+    }
 
   return (
     <div className="flex items-center justify-center">

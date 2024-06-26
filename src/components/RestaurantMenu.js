@@ -6,7 +6,7 @@ import { IMG_CDN_URL } from "../config"
 import MenuShimmer from "./MenuShimmer";
 import useRestaurantsMenu from "../utils/useRestaurantMenu";
 import {useDispatch} from "react-redux";
-// import {addItem} from "../utils/cartSlice"
+
 import star from "../../assets/star.png"
 import SomethingWentWrong from "./SomethingWentWrong";
 // import soldOut from "../../assets/soldOut.png"
@@ -18,12 +18,6 @@ import RestaurantMenuCategory from "./RestaurantMenuCategory";
 const RestaurantMenu = ()=>{
     const {resId} = useParams();
     const [restaurant, menu, apiOk] = useRestaurantsMenu(resId);
-
-    // console.log("restaurant", restaurant);
-    // console.log("menu", menu);
-    // console.log("api", apiOk);
-
-    console.log("menu", menu)
 
    
     if(!apiOk)
@@ -41,9 +35,7 @@ const RestaurantMenu = ()=>{
     //     dispatch(addItem("banana"));
     // }
 
-    // const addFoodItem = (item)=>{
-    //     dispatch(addItem(item));
-    // }
+    
 
     
     const {name, id, city, cuisines, locality, areaName, avgRating, cloudinaryImageId, totalRatingsString} = restaurant;

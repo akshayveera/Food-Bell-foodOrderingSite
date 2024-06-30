@@ -2,7 +2,6 @@
 
 import { useState, useContext } from "react";
 import {Link} from "react-router-dom";
-import useCheckStatus from "../utils/useCheckStatus";
 import UserContext from "../utils/UserContext";
 import {useSelector} from "react-redux";
 import logo from "../../assets/foodbell.png"
@@ -38,10 +37,10 @@ const Header = ()=>{
         </div>
 
         <ul className="flex gap-7  w-[60%] items-center justify-center">
-            <li><Link to="/" className="text-lg font-font5">Home</Link></li>
-            <li><Link to="/restaurants" className="text-lg font-font5">Restaurants</Link></li>
-            <li><Link to="/about" className="text-lg font-font5 ">About Us</Link></li>
-            <li><Link to="/contact" className="text-lg font-font5">Contact Us</Link></li>
+            <li><Link to="/" className="text-lg font-font5 hover:text-[#CB2C2C] hover:border-b-2 hover:border-[#CB2C2C]">Home</Link></li>
+            <li><Link to="/restaurants" className="text-lg font-font5 hover:text-[#CB2C2C] hover:border-b-2 hover:border-[#CB2C2C]">Restaurants</Link></li>
+            <li><Link to="/about" className="text-lg font-font5 hover:text-[#CB2C2C] hover:border-b-2 hover:border-[#CB2C2C]">About Us</Link></li>
+            <li><Link to="/contact" className="text-lg font-font5 hover:text-[#CB2C2C] hover:border-b-2 hover:border-[#CB2C2C]">Contact Us</Link></li>
             {/* <li><Link to="/instamart" className="text-lg font-font5">Instamart</Link></li> */}                       
         </ul>
 

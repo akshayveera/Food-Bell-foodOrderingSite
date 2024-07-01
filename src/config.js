@@ -2,13 +2,13 @@
 
 export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-export const FETCH_RESTAURANTS_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const FETCH_RESTAURANTS_URL = "https://foodfire.onrender.com/api/restaurants?lat=17.448294&lng=78.391487&page_type=DESKTOP_WEB_LISTING";
 // cors proxy : https://thingproxy.freeboard.io/fetch
 // export const FETCH_RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 // madhapur(HYD) - https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.448294&lng=78.391487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 // lpu - https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.2231589&lng=75.7670466&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 
-export const FETCH_MENU_URL =  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.448294&lng=78.391487&catalog_qa=undefined&submitAction=ENTER&restaurantId=";
+export const FETCH_MENU_URL =  "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=17.448294&lng=78.391487&submitAction=ENTER&restaurantId=";
 // export const FETCH_MENU_URL =  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.448294&lng=78.391487&catalog_qa=undefined&submitAction=ENTER&restaurantId=33040";
 // above url is the actual URL, but as the ID id in middle I divided the url into two parts
 

@@ -2,6 +2,7 @@
   "name": "03-food-villa",
   "version": "1.0.0",
   "description": "Food Villa App",
+  "proxy" : "http://localhost:8080/",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",

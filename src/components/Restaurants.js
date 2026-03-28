@@ -75,12 +75,12 @@ const Restaurants = () => {
 
   return allRestaurants?.length === 0 ? <Shimmer /> : (
     <div className="">
-      <div className="flex justify-center p-2 mt-5">
+      <div className="flex flex-col sm:flex-row justify-center px-5 sm:px-2 py-2 mt-5 gap-2">
         <input
           data-testid="search-input"
           type="text"
           placeholder="search restaurants"
-          className="px-5 py-2 m-2 border-[2px] rounded-lg border-[#CB2C2C] w-[40%] outline-none"
+          className="px-5 py-2 border-[2px] rounded-lg border-[#CB2C2C] w-full sm:w-[40%] outline-none"
           value={searchText}
           onChange={(event) => {
             setSearchText(event.target.value);
@@ -91,7 +91,7 @@ const Restaurants = () => {
           }}
         />
 
-        <button data-testid="search-btn" className="bg-[#CB2C2C] px-6 py-3 m-2 rounded-lg font-font5 text-white text-xl hover:shadow hover:shadow-red-400" onClick={() => {
+        <button data-testid="search-btn" className="bg-[#CB2C2C] px-6 py-2 rounded-lg font-font5 text-white text-xl hover:shadow hover:shadow-red-400" onClick={() => {
           const data = filterData(searchText, allRestaurants);
           setFilteredRestaurants(data);
 
@@ -118,7 +118,7 @@ const Restaurants = () => {
         
       </div>      
 
-      <div className="flex flex-wrap py-5 w-[85%] mx-auto justify-evenly " data-testid="res-list">
+      <div className="flex flex-wrap py-5 w-full md:w-[85%] mx-auto justify-evenly " data-testid="res-list">
         {
           filteredRestaurants?.length === 0 ? (
             <div className="h-[58vh] flex flex-col justify-center items-center">

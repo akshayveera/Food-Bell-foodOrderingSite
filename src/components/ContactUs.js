@@ -4,39 +4,39 @@ import mainImg from "../../assets/food3.jpg"
 
 const ContactUs = ()=>{
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center justify-center md:min-h-[77vh]">
 
-            <div className='w-[10%]'>
-                <img src={mainImg} alt="" className='h-[77vh] w-full object-cover object-left  ' />
+            <div className='hidden md:block md:w-[10%]'>
+                <img src={mainImg} alt="" className='h-52 md:h-[77vh] w-full object-cover object-left  ' />
             </div>
 
-            <div className="w-[40%]">
-                <div className="w-[80%] h-[75vh] bg-gray-100 m-auto rounded-lg">
+            <div className="w-full md:w-[40%] py-6 md:py-0">
+                <div className="w-[90%] md:w-[80%] h-auto md:h-[75vh] bg-gray-100 m-auto rounded-lg">
                     <div className="text-center font-font5 text-2xl py-2 border-b border-[#373267] text-[#373267]">Contact Us</div>
 
                     <form action="#" className="flex flex-col">
 
-                        <div className="mt-5 relative w-[75%] mx-auto">
+                        <div className="mt-5 relative w-[85%] md:w-[75%] mx-auto">
                             <label htmlFor="name" className="absolute text-sm bg-transparent top-2 -left-4 text-white py-1 px-2 rounded !bg-[#373267] ">Name </label>
                             <input type="text" id="name" defaultValue="Akshay" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#5f5f63]" />
                         </div>
 
-                        <div className="mt-5 relative w-[75%] mx-auto">
+                        <div className="mt-5 relative w-[85%] md:w-[75%] mx-auto">
                             <label htmlFor="email" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Email </label>
                             <input type="email" id="email" defaultValue="akshay@gmail.com" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-9 font-semibold text-[#5f5f63]" />
                         </div>
 
-                        <div className="mt-5 relative w-[75%] mx-auto">
+                        <div className="mt-5 relative w-[85%] md:w-[75%] mx-auto">
                             <label htmlFor="phone" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Phone </label>
                             <input type="tel" id="phone" maxLength="10" defaultValue="9999999999" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 font-semibold text-[#5f5f63]" />
                         </div>
 
-                        <div className="mt-5 relative w-[75%] mx-auto">
+                        <div className="mt-5 relative w-[85%] md:w-[75%] mx-auto">
                             <label htmlFor="msg" className="absolute text-sm bg-transparent top-2 -left-4 !bg-[#373267] text-white py-1 px-2 rounded">Message </label>
                             <textarea name="msg" id=""  rows="6" defaultValue="I ordered biryani but received puloa" className="p-2 border-2 border-[#373267] rounded-lg w-full outline-none bg-gray-100 pl-10 pt-10 font-semibold text-[#5f5f63]"></textarea>
                         </div>
 
-                        <input type="submit" value="submit" className="bg-[#CB2C2C] w-[75%] mx-auto py-2 text-white font-font5 text-xl rounded-lg mt-4 hover:shadow hover:shadow-red-400 cursor-pointer"/>
+                        <input type="submit" value="submit" className="bg-[#CB2C2C] w-[85%] md:w-[75%] mx-auto py-2 text-white font-font5 text-xl rounded-lg mt-4 mb-4 hover:shadow hover:shadow-red-400 cursor-pointer"/>
                         
                     </form>
 
@@ -47,8 +47,8 @@ const ContactUs = ()=>{
 
             </div>
 
-            <div className='w-[50%]'>
-                <img src={mainImg} alt="" className='h-[77vh] w-full object-cover object-center' />
+            <div className='hidden md:block md:w-[50%]'>
+                <img src={mainImg} alt="" className='h-52 md:h-[77vh] w-full object-cover object-center' />
             </div>
             
 

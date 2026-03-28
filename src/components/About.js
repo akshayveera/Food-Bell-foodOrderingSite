@@ -20,34 +20,34 @@ const About = () => {
 
     <div className=''>
 
-        <div className='flex items-center justify-center '>
+        <div className='flex flex-col md:flex-row items-center justify-center md:min-h-[77vh] '>
 
-        <div className='w-[10%]'>
-            <img src={mainImg} alt="" className='h-[77vh] w-full object-cover object-left  ' />
+        <div className='hidden md:block md:w-[10%]'>
+            <img src={mainImg} alt="" className='h-52 md:h-[77vh] w-full object-cover object-left  ' />
         </div>
 
-        <div className='flex flex-col gap-5 w-[40%] pl-16 '>
+        <div className='flex flex-col gap-5 w-full md:w-[40%] px-6 md:pl-16 py-10 md:py-0 '>
 
             <img src={handShake} alt="" className='w-[60%] ml-10' />
 
-            <p className='font-font1 text-3xl w-[90%] '>Welcome to <Link to="/"> <span className='text-[#CB2C2C] font-font4'> FoodBell</span> </Link> , your culinary confidante! Beyond just an app, we're your flavor curator, ensuring top-notch eats reach your door effortlessly. Dive into a world of tastes, easy orders, and pure satisfaction. Let's redefine your dining journey, where every bite is an adventure!</p>
+            <p className='font-font1 text-sm sm:text-base md:text-base lg:text-xl xl:text-2xl w-full md:w-[90%] '>Welcome to <Link to="/"> <span className='text-[#CB2C2C] font-font4'> FoodBell</span> </Link> , your culinary confidante! Beyond just an app, we're your flavor curator, ensuring top-notch eats reach your door effortlessly. Dive into a world of tastes, easy orders, and pure satisfaction. Let's redefine your dining journey, where every bite is an adventure!</p>
             
         </div>
 
-        <div className='w-6/12'>
-            <img src={mainImg} alt="" className='h-[77vh] w-full object-cover object-center  ' />
+        <div className='hidden md:block md:w-6/12'>
+            <img src={mainImg} alt="" className='h-52 md:h-[77vh] w-full object-cover object-center  ' />
         </div>
             
         </div>
 
 
-        <div className=' w-[70%] my-10  mx-auto'>
+        <div className='w-[90%] md:w-[70%] my-10  mx-auto'>
 
-            <h1 className='text-center font-font5 text-4xl text-[#373267] my-5 py-5 border-b border-t'>Our Services</h1>
+            <h1 className='text-center font-font5 text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-[#373267] my-5 py-5 border-b border-t'>Our Services</h1>
 
             <div className='flex flex-wrap gap-10 justify-evenly my-10'>
 
-                <div className='bg-gray-100 rounded-full w-[35%] flex flex-col items-center p-2'>
+                <div className='bg-gray-100 rounded-full w-full sm:w-[45%] md:w-[35%] flex flex-col items-center p-2'>
                     <img src={discover} alt="" className='w-[60%]'/>
                     <div className='flex flex-col items-center justify-center gap-1'>
                         <h1 className='font-font5 text-center text-xl text-[#373267] '>Restaurant Discovery</h1>
@@ -55,7 +55,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='bg-gray-100 rounded-full w-[35%] flex flex-col items-center p-2'>
+                <div className='bg-gray-100 rounded-full w-full sm:w-[45%] md:w-[35%] flex flex-col items-center p-2'>
                     <img src={orderFood} alt="" className='w-[60%]'/>
                     <div className='flex flex-col items-center justify-center gap-1'>
                         <h1 className='font-font5 text-center text-xl text-[#373267] '>Order Placement</h1>
@@ -63,7 +63,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='bg-gray-100 rounded-full w-[35%] flex flex-col items-center p-2'>
+                <div className='bg-gray-100 rounded-full w-full sm:w-[45%] md:w-[35%] flex flex-col items-center p-2'>
                     <img src={delivery} alt="" className='w-[60%]'/>
                     <div className='flex flex-col items-center justify-center gap-1'>
                         <h1 className='font-font5 text-center text-xl text-[#373267] '>Delivery Services</h1>
@@ -71,7 +71,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='bg-gray-100 rounded-full w-[35%] flex flex-col items-center p-2 '>
+                <div className='bg-gray-100 rounded-full w-full sm:w-[45%] md:w-[35%] flex flex-col items-center p-2 '>
                     <img src={rating} alt="" className='w-[60%]'/>
                     <div className='flex flex-col items-center justify-center gap-1'>
                         <h1 className='font-font5 text-center text-xl text-[#373267] '>Customer Reviews and Ratings</h1>
@@ -84,36 +84,36 @@ const About = () => {
         </div>
 
         <div className='w-[100%] mb-10 '>
-            <h1 className='text-center font-font5 text-4xl text-[#373267] my-5 py-5 border-b border-t'>Why Choose Us ?</h1>
+            <h1 className='text-center font-font5 text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-[#373267] my-5 py-5 border-b border-t'>Why Choose Us ?</h1>
 
-            <div className='w-[100%] flex items-center justify-evenly '>
+            <div className='w-[100%] flex flex-col md:flex-row items-center justify-evenly gap-8 px-4 md:px-0 '>
 
-                <div className='w-[30%]'>
-                    <img src={waiter} alt="" className='h-[400px]' />
+                <div className='w-full md:w-[30%] flex justify-center'>
+                    <img src={waiter} alt="" className='h-48 md:h-[400px]' />
                 </div>
 
-                <div className='w-[30%] '>
-                    <h1 className='font-font2 text-4xl text-[#373267]  ' >Every flavor becomes delicious</h1>
-                    <p className='text-3xl font-font1 font-semibold text-gray-600 py-4'>From your neighbourhood, from South Indian spot to the Burger and Fries you crave, Choose from a number of different restaurants</p>
+                <div className='w-full md:w-[30%] '>
+                    <h1 className='font-font2 text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-[#373267]  ' >Every flavor becomes delicious</h1>
+                    <p className='text-sm sm:text-base md:text-base lg:text-lg xl:text-2xl font-font1 font-semibold text-gray-600 py-4'>From your neighbourhood, from South Indian spot to the Burger and Fries you crave, Choose from a number of different restaurants</p>
                     <Link to="/restaurants">
-                        <button className="px-4 text-center py-2 bg-[#CB2C2C] text-white rounded-lg flex text-lg font-font5 mr-24 justify-center hover:shadow hover:shadow-red-400">{"order now >"}</button>
+                        <button className="px-4 text-center py-2 bg-[#CB2C2C] text-white rounded-lg flex text-lg font-font5 justify-center hover:shadow hover:shadow-red-400">{"order now >"}</button>
                     </Link>
                 </div>
 
                 <div className='flex flex-col gap-2'>
                     <div className='flex flex-col bg-[#CB2C2C] text-white px-10 py-1 rounded-lg'>
-                        <h1 className='font-font5 text-4xl text-center'>220K+</h1>
-                        <p className='font-font5 text-xl text-center'>online orders</p>
+                        <h1 className='font-font5 text-2xl md:text-3xl lg:text-4xl text-center'>220K+</h1>
+                        <p className='font-font5 text-sm md:text-base lg:text-xl text-center'>online orders</p>
                     </div>
 
                     <div className='flex flex-col bg-[#CB2C2C] text-white px-10 py-1 rounded-lg'>
-                        <h1 className='font-font5 text-4xl text-center'>50K+</h1>
-                        <p className='font-font5 text-xl text-center'>trusted clients</p>
+                        <h1 className='font-font5 text-2xl md:text-3xl lg:text-4xl text-center'>50K+</h1>
+                        <p className='font-font5 text-sm md:text-base lg:text-xl text-center'>trusted clients</p>
                     </div>
 
                     <div className='flex flex-col bg-[#CB2C2C] text-white px-10 py-1 rounded-lg'>
-                        <h1 className='font-font5 text-4xl text-center'>30K+</h1>
-                        <p className='font-font5 text-xl text-center'>customer reviews</p>
+                        <h1 className='font-font5 text-2xl md:text-3xl lg:text-4xl text-center'>30K+</h1>
+                        <p className='font-font5 text-sm md:text-base lg:text-xl text-center'>customer reviews</p>
                     </div>
                 </div>
 

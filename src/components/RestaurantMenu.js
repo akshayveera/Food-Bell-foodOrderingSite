@@ -45,13 +45,13 @@ const RestaurantMenu = ()=>{
 
         <div className=" ">
 
-            <div className="flex gap-10 py-10 border-b justify-evenly w-[80%] mx-auto">
+            <div className="flex flex-col md:flex-row gap-10 py-10 border-b justify-evenly w-full md:w-[80%] mx-auto px-4 md:px-0">
 
-                <div className="w-[25%]">
+                <div className="w-full md:w-[25%]">
                     <img src={IMG_CDN_URL+cloudinaryImageId} alt="img" className="w-full h-48 object-cover rounded-lg" />
                 </div>
 
-                <div className="flex justify-between w-[60%]">
+                <div className="flex flex-col md:flex-row justify-between w-full md:w-[60%] gap-4">
                     <div>
                         <h1 className="text-2xl font-semibold mt-3">{name}</h1>
                         <p className="font-font1 text-2xl">{city}</p>
@@ -62,7 +62,7 @@ const RestaurantMenu = ()=>{
 
                     </div>
 
-                    <div className="flex flex-col gap-2 items-center justify-center border-2 rounded-lg my-10 ">
+                    <div className="flex flex-col gap-2 items-center justify-center border-2 rounded-lg my-4 md:my-10 w-fit ">
 
                         <div className="flex gap-2 items-center border-b w-full justify-center p-2">
                             <img src={star} alt="" className="h-7" />
@@ -96,9 +96,9 @@ const RestaurantMenu = ()=>{
 
                 ) : (
 
-                    <div className="flex items-center justify-evenly w-[60%] mx-auto my-4 h-[35vh]  ">
+                    <div className="flex items-center justify-evenly w-full md:w-[60%] mx-auto my-4 h-auto md:h-[35vh] px-4 md:px-0 ">
 
-                        <div className="w-[50%] flex flex-col items-center gap-5">
+                        <div className="w-full md:w-[50%] flex flex-col items-center gap-5">
                             <p className="font-font2 text-2xl text-center text-[#373267]">Currently this restaurant is not serving! retry later</p>
 
                             <Link to="/restaurants">

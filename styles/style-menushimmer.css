@@ -89,3 +89,44 @@
     margin-right: 20px;
 }
 
+@media (max-width: 768px) {
+    .ms-head {
+        width: 95%;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .ms-head-img {
+        width: 35%;
+        height: 80px;
+    }
+
+    .ms-head-text {
+        width: 55%;
+        height: auto;
+    }
+
+    .ms-menu-head {
+        width: 95%;
+    }
+
+    .ms-menu {
+        width: 95%;
+    }
+
+    .ms-menu-item {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .ms-menu-text {
+        width: 55%;
+    }
+
+    .ms-menu-img {
+        width: 90px;
+        height: 70px;
+        margin-right: 10px;
+    }
+}
+

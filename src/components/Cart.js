@@ -25,18 +25,18 @@ const Cart = ()=>{
     }
 
     return (
-        <div className="flex justify-evenly my-8  ">
+        <div className="flex flex-col md:flex-row justify-evenly my-8 px-4 md:px-0 gap-6 md:gap-0 ">
             {/* <div className="flex flex-col m-5">
                 <h1 className="font-bold text-4xl text-center p-2">Cart</h1>
                 <button className="px-4 py-1 bg-purple-300 rounded-lg w-32 place-self-center" 
                 onClick={()=>handleClick()}>clear cart</button>
             </div> */}
 
-            <div className="w-[50%]">
+            <div className="w-full md:w-[50%]">
                 <CartItems items={items}/>
             </div>
 
-            <div className="w-[30%] min-h-[460px] h-fit bg-gray-100 rounded-lg relative mb-10 pb-14">
+            <div className="w-full md:w-[30%] min-h-fit md:min-h-[460px] h-fit bg-gray-100 rounded-lg relative mb-10 pb-14">
 
                 <div>
                     <p className="text-center font-font5 text-2xl py-3 border-b">{"Cart ( " + items.length + " )"}</p>                  

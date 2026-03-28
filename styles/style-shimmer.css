@@ -48,6 +48,29 @@
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .shimmer-search {
+        width: 70%;
+        margin: 10px;
+    }
+
+    .shimmer-search-btn {
+        width: 20%;
+        margin: 10px;
+    }
+
+    .shimmer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .shimmer-box {
+        width: 160px;
+        height: 200px;
+        margin: 10px;
+    }
+}
+
 .shimmer-img{
     /* border: 1px solid black; */
 

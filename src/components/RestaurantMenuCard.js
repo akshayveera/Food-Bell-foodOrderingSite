@@ -22,7 +22,7 @@ const RestaurantMenuCard = ({menuData}) => {
   return (
     <div className="flex items-center justify-center">
 
-        <div className="w-7/12">
+        <div className="w-full md:w-7/12 px-4 md:px-0">
             <div className="w-full">
                 <div className=" text-xl font-font5 py-4 border-b flex justify-between cursor-pointer" onClick={()=>{
                     setIsOpen(!isOpen);

@@ -56,10 +56,10 @@ const RestaurantMenuCard = ({menuData}) => {
 
                                         </div>
                                         
-                                        {item.card.info.ratings.aggregatedRating.rating && (
+                                        {item.card.info.ratings?.aggregatedRating?.rating && (
                                             <div className="flex gap-1 items-center">
                                                 <img src={star} alt="" className="h-5"/>
-                                                <p className="font-bold text-lg text-[#CB2C2C]">{item.card.info.ratings.aggregatedRating.rating}</p>
+                                                <p className="font-bold text-lg text-[#CB2C2C]">{item.card.info.ratings?.aggregatedRating?.rating}</p>
                                             </div>
                                         )}
 

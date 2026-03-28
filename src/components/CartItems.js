@@ -24,9 +24,9 @@ const CartItems = ({items})=>{
         <div className="flex flex-wrap">
 
             <div className="flex justify-between w-full border-b pb-2">
-                <p className=" font-font5 text-2xl">{"Cart Items ( " + items.length + " )"  }</p>
+                <p className=" font-font5 text-lg md:text-2xl">{"Cart Items ( " + items.length + " )"  }</p>
 
-                <button className="px-4 text-center py-2 bg-[#CB2C2C] text-white rounded-lg flex text-lg font-font5 justify-center hover:shadow hover:shadow-red-400" 
+                <button className="px-3 md:px-4 text-center py-2 bg-[#CB2C2C] text-white rounded-lg flex text-sm md:text-lg font-font5 justify-center hover:shadow hover:shadow-red-400" 
                     onClick={()=>handleClear()}>Clear cart</button>
             </div>
 
@@ -38,7 +38,7 @@ const CartItems = ({items})=>{
                         <div className="flex flex-col gap-2 w-[70%]">
 
                             <div>
-                                <p className="font-semibold text-xl">{item.name}</p>
+                                <p className="font-semibold text-base md:text-xl">{item.name}</p>
 
                                 {
                                     (item.price) ? (
@@ -65,7 +65,7 @@ const CartItems = ({items})=>{
                             <img src={IMG_CDN_URL+item.imageId} alt="" className="h-20 w-36 object-cover rounded-lg "/>
                             <button 
                                 data-testid="add-btn"
-                                className="px-4 py-1 bg-[#CB2C2C] font-font5 text-lg text-white rounded-lg relative bottom-4  hover:shadow hover:shadow-red-400"
+                                className="px-3 md:px-4 py-1 bg-[#CB2C2C] font-font5 text-sm md:text-lg text-white rounded-lg relative bottom-4  hover:shadow hover:shadow-red-400"
                                 onClick={(e)=>{
                                     removeFoodItem(parseInt(e.target.parentElement.firstChild.innerHTML))
                                     }}>
